@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  
+  /* Terra Analytics Inspired Palette */
+  --color-brand-dark: #1A1F16; /* Deep Forest/Olive Black */
+  --color-brand-lime: #D4F846; /* Vibrant Lime */
+  --color-brand-cream: #F7F7F2; /* Off-white/Cream */
+  --color-brand-gray: #E5E5E0; /* Light Gray for borders */
+
+  /* Aliases for backward compatibility */
+  --color-brand-blue: var(--color-brand-dark);
+  --color-brand-yellow: var(--color-brand-lime);
+}
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-brand-dark font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Custom Utilities for the Terra Look */
+.btn-lime {
+  @apply bg-brand-lime text-brand-dark font-bold px-6 py-3 rounded-full hover:bg-lime-400 transition-all active:scale-95 flex items-center justify-center gap-2;
+}
+
+.btn-pill-outline {
+  @apply bg-transparent border border-brand-dark/20 text-brand-dark px-4 py-2 rounded-full text-sm font-medium hover:bg-brand-dark hover:text-white transition-colors;
+}
+
+.nav-pill {
+  @apply bg-brand-cream/90 backdrop-blur-md border border-brand-dark/5 rounded-full px-6 py-3 shadow-sm;
+}
+
+.card-bento {
+  @apply rounded-[2rem] overflow-hidden relative;
+}
+
+.text-shadow-sm {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
